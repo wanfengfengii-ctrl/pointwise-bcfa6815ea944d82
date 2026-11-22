@@ -1,0 +1,9 @@
+{
+  "stations": ["A", "B"],
+  "initial": ["1", "0"],
+  "routes": [
+    {"route_id": "outbound", "source": "A", "destination": "B", "base_probability": "1/2", "releases": 2},
+    {"route_id": "return", "source": "B", "destination": "A", "base_probability": "1/2", "releases": 1}
+  ],
+  "audit_ratio": "1/4"
+}
