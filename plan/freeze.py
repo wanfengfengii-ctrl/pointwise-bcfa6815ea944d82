@@ -12,7 +12,7 @@ def freeze_plan(source: RevisionStore, archive: HandoverArchive, revision_id: st
     stations = tuple(station.name for station in revision.stations)
     check_eligibility(stations, revision.routes)
     routes = tuple(
-        FrozenRoute(route.route_id, route.source, route.destination, route.base_probability, int(bool(route.releases)))
+        FrozenRoute(route.route_id, route.source, route.destination, route.base_probability, route.releases)
         for route in revision.routes
     )
     plan = FrozenPlan(f"plan-{uuid4().hex}", revision.revision_id, stations, revision.initial, routes)
